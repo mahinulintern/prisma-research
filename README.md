@@ -80,12 +80,25 @@ model User {
 npx prisma migrate dev --name init
 
 // default key : npx prisma migrate dev
-// name: if you don't put name field then it will manually ask for a name
+// name: if you don't put name field then it will manually ask for a name within the process.
 // name: you can set any name. It should be fine.
 ```
 * What is migration?
 * In Prisma, migrations are a mechanism for managing changes to your database schema over time. When you modify your Prisma schema definition, Prisma provides tools to generate and execute migration scripts that safely update your database tables to reflect the new schema structure.
 * When I change something in the schema - perform migrate()
-* Database gets synced with 
-* 
+* Database gets synced with Prisma schema. 
+* <b> If the schema doesn't match with the current database, it will erase the whole database along with data inorder to match with Prisma schema. </b>
+
+<!---
+================ DROPDOWN ====================================================================================
+--->
+<details><summary><b> <i>A little bit more to the Concept</i></b> </summary>
+  
+* `npx prisma migrate dev --name init` installs something more behind the scene.
+* It automatically installs `@prisma/client`.
+* It automatically executes `npx prisma generate`.
+</details>
+
+## Fourth: 
+* Using `@prisma/client` to perform the prisma operation.
 
