@@ -5,6 +5,8 @@
 ![image](https://github.com/mahinulintern/prisma-research/assets/167665561/2787fbf0-7bf8-4964-8344-5c4e6968a637)
 ![image](https://github.com/mahinulintern/prisma-research/assets/167665561/f2cdd9aa-9dd0-4c94-8f43-939a1eedfd30)
 ![image](https://github.com/mahinulintern/prisma-research/assets/167665561/560460de-aa38-42d2-b830-6d880944e5c6)
+![image](https://github.com/mahinulintern/prisma-research/assets/167665561/b5a98c61-ccd4-444a-a248-281479600071)
+
 
 
 
@@ -83,11 +85,13 @@ npx prisma migrate dev --name init
 // name: if you don't put name field then it will manually ask for a name within the process.
 // name: you can set any name. It should be fine.
 ```
+![image](https://github.com/mahinulintern/prisma-research/assets/167665561/1feaf37c-327e-4178-b250-88b22cec6f4b)
+
 * What is migration?
 * In Prisma, migrations are a mechanism for managing changes to your database schema over time. When you modify your Prisma schema definition, Prisma provides tools to generate and execute migration scripts that safely update your database tables to reflect the new schema structure.
 * When I change something in the schema - perform migrate()
 * Database gets synced with Prisma schema. 
-* <b> If the schema doesn't match with the current database, it will erase the whole database along with data inorder to match with Prisma schema. </b>
+* <b> If the schema doesn't match with the current database, it will erase the whole database along with data to match with Prisma schema. </b>
 
 <!---
 ================ DROPDOWN ====================================================================================
@@ -101,4 +105,25 @@ npx prisma migrate dev --name init
 
 ## Fourth: 
 * Using `@prisma/client` to perform the prisma operation.
+```javascript
+import { PrismaClient } from '@prisma/client'
+// automatically installed by npx prisma migrate dev --name init
+
+const prisma = new PrismaClient()
+//initiate prisma client
+
+
+// function can be any name
+// what left is to execute the function somewhere else.
+async function main() {
+  const getUser = await prisma.user.findMany();
+  console.log(getUser);
+}
+
+
+const x = async () => {
+    const data = await main();
+    await prisma.$disconnect(); // disconnect prisma client when the process is done.
+}
+```
 
