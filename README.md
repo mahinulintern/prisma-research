@@ -1,6 +1,8 @@
 # Contents
 * [Installing the environment](#installing-the-environment)  <br>
-        - [Installing the environment](#first-initiate-or-create-a-new-schema-file)
+        - [Create a new schema file](#first-initiate-or-create-a-new-schema-file)
+        - [Write Schema](#second-write-the-schema)
+        - [Perform Migration](#thrid-migration) 
 
 `npm install -g prisma`
 
