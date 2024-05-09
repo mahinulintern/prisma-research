@@ -1,4 +1,6 @@
 # Contents
+* [Installing the environment](#installing-the-environment)  <br>
+        - [Installing the environment](#first-initiate-or-create-a-new-schema-file)
 
 `npm install -g prisma`
 
@@ -14,7 +16,7 @@
 <br>
 <br>
 
-# Installing the environment.
+# Installing the environment
 * Setup ORM
 * Perform Prisma Migrate [it simply resets the database(hypothesis)] , have to fix it. <b>Know what it is </b>
 * There are two things I need to install. 
@@ -24,7 +26,7 @@
 
 <br>
 
-## First: Initiate or Create a new Schema file.
+## First Initiate or Create a new Schema file.
 * `npx prisma init` - this will create `schema.prisma` file.
 * Completed the first Step of the `prisma installation`.
 
